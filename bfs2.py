@@ -41,15 +41,7 @@ def bfs_connected_component(graph, start,searchvalue):
 
     # keep looping until there are nodes still to be checked
     while queue: 
-        # pop the shallowest node (first node) from queue
-        node = queue.pop(0)
-        if (node==searchvalue):
-            explored.append(node)
-            return explored
-            
-
-                # add node to list of checked nodes
-                explored.append(node)
+        # pop the shallowest node (first node) from 
                 neighbours = graph[node]
                 
                 # add neighbours of node to queue
