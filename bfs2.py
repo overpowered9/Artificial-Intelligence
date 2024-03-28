@@ -46,8 +46,7 @@ def bfs_connected_component(graph, start,searchvalue):
         if (node==searchvalue):
             explored.append(node)
             return explored
-                
-        if node not in explored:
+            
 
                 # add node to list of checked nodes
                 explored.append(node)
