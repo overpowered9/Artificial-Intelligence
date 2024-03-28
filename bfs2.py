@@ -32,11 +32,6 @@ graph2 = {
             "Neamt": ["Iasi"]
 }
 
-def bfs_connected_component(graph, start,searchvalue):
-    # keep track of all visited nodes
-    explored = []
-    # keep track of nodes to be checked
-    queue = [start]
 
 
     # keep looping until there are nodes still to be checked
