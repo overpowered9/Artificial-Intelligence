@@ -33,16 +33,3 @@ graph2 = {
 }
 
 
-
-    # keep looping until there are nodes still to be checked
-    while queue: 
-        # pop the shallowest node (first node) from 
-                neighbours = graph[node]
-                
-                # add neighbours of node to queue
-                for neighbour in neighbours:
-                    queue.append(neighbour)                
-    return []
-
-# Test the function with start node 0
-print(bfs_connected_component(graph2,"Arad","Bucharest"))  # Output: [0, 1, 3, 4, 2, 6, 7, 5, 8]
