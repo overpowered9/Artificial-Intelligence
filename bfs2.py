@@ -25,10 +25,6 @@ graph2 = {
             "Giurgiu": ["Bucharest"],
             "Urziceni": ["Bucharest", "Hirsova", "Vaslui"],
             "Hirsova": ["Urziceni", "Eforie"],
-            "Eforie": ["Hirsova"],
-            "Vaslui": ["Urziceni", "Iasi"],
-            "Iasi": ["Vaslui", "Neamt"],
-            "Neamt": ["Iasi"]
-}
+
 
 
