@@ -1,4 +1,4 @@
 xs =[3,13,31]
-print(xs,xs[-1]);
-print(xs.pop())
-print(xs)
+print(xs[2:1:-1])
+print(xs[1:2])      
+print(xs[1:1])
