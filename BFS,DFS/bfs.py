@@ -60,3 +60,4 @@ def bfs_connected_component(graph, start,searchvalue):
 
 # Test the function with start node 0
 print(bfs_connected_component(graph2,"Arad","Bucharest"))  # Output: [0, 1, 3, 4, 2, 6, 7, 5, 8]
+print(bfs_connected_component(graph,0,5)) #Output: [0, 4, 5]
