@@ -1,7 +1,4 @@
-s='helo'
-v= s.capitalize()
-word='Hello'
-word.lower()
-print(word + v)
-print(s.rjust(90))
-print(word.replace('ll','rr'))
+xs =[3,13,31]
+print(xs,xs[-1]);
+print(xs.pop())
+print(xs)
