@@ -11,5 +11,8 @@ my_list = []
 #     print(value)
 
 mylist2= []
-my_list2 = [value for value in range(5)]   
-print(my_list2)
+for j in range(5):
+     value = input("kkL:")
+     mylist2.append(value)
+ 
+print(mylist2)
