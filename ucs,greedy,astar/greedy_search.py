@@ -50,37 +50,32 @@ class Graph:
     def get_heuristic(self, node):
         return self.heuristic[node]
 
-
 def a_star(graph, start, goal):
     visited = set()
     queue = PriorityQueue()
-    queue.put((0 + graph.get_heuristic(start), start))  # Include heuristic for the start node
-    parent = {start: (None, 0)}  # To store parent nodes and cumulative cost for path reconstruction
-    
+    queue.put((0 + graph.get_heuristic(start), (start, 0)))
+
+    parent = {start: (None, graph.get_heuristic(start))}
+
     while not queue.empty():
-        cost, node = queue.get()
-        
+        _, (node, cost) = queue.get()
+
         if node not in visited:
             visited.add(node)
-            
+
             if node == goal:
-                # Reconstruct the path from start to goal
                 path = []
                 while node is not None:
                     path.append(node)
                     node = parent[node][0]
-                return path[::-1], parent[goal][1]  # Return the path in correct order and total cost
-            
-            for n in graph.neighbors(node):
-                if n not in visited:
-                    total_cost = cost + graph.get_cost(node, n) + graph.get_heuristic(n)  # Include heuristic in total cost
-                    queue.put((total_cost, n))
-                    parent[n] = (node, total_cost)  # Update parent and cumulative cost for node n
-    
-    return [], float('inf')  # Goal not reachable, return an empty path and infinite cost
+                return path[::-1], parent[goal][1]
 
-
-
+            for neighbor in graph.neighbors(node):
+                if neighbor not in visited:
+                    cost_gn = cost + graph.get_cost(node, neighbor)
+                    total_cost = cost_gn + graph.get_heuristic(neighbor)
+                    queue.put((total_cost, (neighbor, cost_gn)))
+                    parent[neighbor] = (node, total_cost)
 
 def ucs(graph, start, goal):
     visited = set()
@@ -149,6 +144,6 @@ graph.populate_weights()
 print("edges    : ", graph.edges)
 print("weights  : ", graph.weights)
 print("heristics: ", graph.heuristic)
-print("UCS       : ", ucs(graph, "A", "B"))
-# print("A*       : ", a_star(graph, "A", "B"))
+# print("UCS       : ", ucs(graph, "A", "B"))
+print("A*       : ", greedy_best_first_search(graph, "A", "B"))
 # print("GBFS     : ", greedy_best_first_search(graph, "A", "B"))
