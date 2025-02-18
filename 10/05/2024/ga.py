@@ -80,7 +80,7 @@ class GA:
                 self.population[individualIndex][0][bitIndex] = 0
         self.updatePopulationFitness()
 
-individualSize, populationSize = 2, 10
+individualSize, populationSize = 8, 10
 i = 0
 instance = GA(individualSize, populationSize)
 while True:
