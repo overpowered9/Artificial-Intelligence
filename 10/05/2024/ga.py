@@ -86,7 +86,7 @@ instance = GA(individualSize, populationSize)
 while True:
     instance.selectParents()
     instance.generateChildren(0.8)
-    instance.mutateChildren(0.0)
+    instance.mutateChildren(0.03)
     print(instance.population)
     print(instance.totalFitness)
     print(i)
